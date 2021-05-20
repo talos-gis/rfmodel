@@ -1,0 +1,3 @@
+LIBRARY libtirem3 
+EXPORTS 
+CalcTiremLoss 
