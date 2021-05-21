@@ -14,9 +14,9 @@ from src.tirem import (
     __description__,
 )
 
-package_root = 'src'   # package sources are under this dir
+package_root = 'src'
 packages = [__pacakge_name__]
-package_dir = {'': package_root}  # packages sources are under package_root
+package_dir = {'': package_root}
 src_root = 'src/tirem'
 
 ext_modules = Extension(

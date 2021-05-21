@@ -2,7 +2,7 @@ from typing import Tuple, Optional, Union
 
 from osgeo import osr
 import numpy as np
-from tirem.geod.geod_backport import Geod, GeodIntermediateReturn
+from rfmodel.geod.geod_backport import Geod, GeodIntermediateReturn
 
 from osgeo_utils.auxiliary.util import PathOrDS
 from osgeo_utils.samples.gdallocationinfo import gdallocationinfo

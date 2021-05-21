@@ -2,12 +2,10 @@
 
 :: delete old dists
 rmdir /s/q dist
-rmdir /s/q build
 
 :: creating the package
-python setup_whl.py bdist_wheel
-
-:: test the dist via twine
-python -m twine check dist/*.whl
+call build-rfmodel-wheel.bat x
+call build-tirem-wheel.bat x
+call build-tirem-bin-wheel.bat x
 
 if %1x==x pause

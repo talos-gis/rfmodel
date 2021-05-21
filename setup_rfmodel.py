@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-from src.tirem import (
+from src.rfmodel import (
     __pacakge_name__,
     __author__,
     __author_email__,
@@ -12,10 +12,11 @@ from src.tirem import (
 
 soruce_dir = 'src'
 packages = find_packages(soruce_dir)  # include all packages under src
-package_dir = {'': soruce_dir}  # tell distutils packages are under src
+packages = [p for p in packages if str(p).lower().startswith(__pacakge_name__.lower())]
+package_dir = {'': soruce_dir}
 
-install_requires = ['numpy']
-extras_require = dict(extra=['gdal>=3.0.0', 'gdal-utils>=3.3.0.7', 'pyproj>=3.0.1'])
+install_requires = ['numpy', 'gdal>=3.0.0', 'gdal-utils>=3.3.0.7', 'pyproj>=3.0.1']
+extras_require = dict(tirem=['tirem'])
 readme = open('README.rst', encoding="utf-8").read()
 readme_type = 'text/x-rst'
 
@@ -33,5 +34,5 @@ setup(
     long_description_content_type=readme_type,
     install_requires=install_requires,
     extras_require=extras_require,
-    package_data={"": ["*.dll", "*.pyd"]},
+    # package_data={"": ["*.dll", "*.pyd"]},
 )

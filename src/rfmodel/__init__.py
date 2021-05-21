@@ -1,9 +1,9 @@
-version = (3, 0, 0)
+version = (0, 0, 3)
 
-__pacakge_name__ = "tirem"
+__pacakge_name__ = "RFModel"
 __version__ = '.'.join(str(v) for v in version)
 __author__ = "Idan Miara"
 __author_email__ = "idan@miara.com"
 __license__ = "MIT"
 __url__ = r"https://github.com/talos-gis/rfmodel"
-__description__ = "TIREM Python API"
+__description__ = "RFModel Python API"

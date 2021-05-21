@@ -3,5 +3,5 @@ rmdir /s/q dist
 rmdir /s/q build
 
 pushd src\tirem
-del tirem3.c tirem3*.pyd *.exp
+del _tirem3.c _tirem3*.pyd *.exp *.html
 popd
