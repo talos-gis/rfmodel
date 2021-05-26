@@ -1,12 +1,10 @@
-from numpy.testing import assert_almost_equal
-
 from rfmodel.rfmodel import calc_path_loss_lonlat
 from rfmodel.rfmodel_types import RFModelPolarization, RFModelReturn
 from tirem.tirem3 import calc_tirem_loss
 
 
 def test_calc_loss_lonlat():
-    filename = 'data/srtm_lowres.tif'
+    filename = 'data/srtm_30k.tif'
 
     boston_lat = 42. + (15. / 60.)
     boston_lon = -71. - (7. / 60.)
@@ -26,7 +24,7 @@ def test_calc_loss_lonlat():
         frequency=3000.0, polarization=RFModelPolarization.H,
         refractivity=300.0, conductivity=0.003, permittivity=10.0, humidity=10.0)
 
-    print_debug = True
+    print_debug = False
     res = calc_path_loss_lonlat(
         calc_tirem_loss, filename,
         profile_options=profile_options, rfmodel_options=rfmodel_options,
@@ -34,7 +32,7 @@ def test_calc_loss_lonlat():
         print_debug=print_debug)
 
     expected = RFModelReturn(
-        fresnel_clearance=0.0, total_loss=670.5097045898438, free_space_loss=174.6343536376953,
+        fresnel_clearance=0.0, total_loss=655.2137451, free_space_loss=174.63401794433594,
         version='TIREM-5.', propagation_mode='TRO')
 
     expected.assert_equal(res)

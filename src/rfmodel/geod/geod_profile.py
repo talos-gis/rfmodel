@@ -2,7 +2,15 @@ from typing import Tuple, Optional, Union
 
 from osgeo import osr
 import numpy as np
-from rfmodel.geod.geod_backport import Geod, GeodIntermediateReturn
+import pyproj
+
+from rfmodel.util import version_tuple
+
+pyproj_version = version_tuple(pyproj.__version__)
+if pyproj_version >= (3, 1):
+    from pyproj.geod import Geod, GeodIntermediateReturn
+else:
+    from rfmodel.geod.geod_backport import Geod, GeodIntermediateReturn
 
 from osgeo_utils.auxiliary.util import PathOrDS
 from osgeo_utils.samples.gdallocationinfo import gdallocationinfo

@@ -1,4 +1,4 @@
-version = (0, 0, 3)
+version = (0, 0, 4)
 
 __pacakge_name__ = "RFModel"
 __version__ = '.'.join(str(v) for v in version)
