@@ -13,9 +13,11 @@ from src.tirem import (
     __description__,
 )
 
-soruce_dir = 'src'
+
+soruce_root = 'src'
+source_package = soruce_root + '/' + __package_name__
 packages = [__package_name__]
-package_dir = {'': soruce_dir}
+package_dir = {'': soruce_root}
 
 install_requires = ['tirem-bin']
 readme = open('README_TIREM.rst', encoding="utf-8").read()
@@ -23,19 +25,18 @@ readme_type = 'text/x-rst'
 
 if 'bdist_wheel' in sys.argv:
     # set correct python-tag and plat-name
-    path = Path(soruce_dir) / __package_name__
-    python_tags = []
-    plat_names = []
-    for filename in path.glob('*.pyd'):
+    python_tags = set()
+    plat_names = set()
+    for filename in Path(source_package).glob('*.pyd'):
         tags = str(filename).split('.')
         if len(tags) >= 2:
             python_tag, plat_name = tags[1].split('-', maxsplit=1)
-            python_tags.append(python_tag)
-            plat_names.append(plat_name)
+            python_tags.add(python_tag)
+            plat_names.add(plat_name)
     if python_tags and not any(arg.startswith('--python-tag') for arg in sys.argv):
-        sys.argv.extend(['--python-tag', '.'.join(python_tags)])
+        sys.argv.extend(['--python-tag', '.'.join(sorted(python_tags))])
     if plat_names and not any(arg.startswith('--plat-name') for arg in sys.argv):
-        sys.argv.extend(['--plat-name', '.'.join(plat_names)])
+        sys.argv.extend(['--plat-name', '.'.join(sorted(plat_names))])
 
 setup(
     name=__package_name__,
