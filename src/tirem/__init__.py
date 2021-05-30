@@ -1,6 +1,6 @@
 version = (3, 0, 0)
 
-__pacakge_name__ = "tirem"
+__package_name__ = "tirem"
 __version__ = '.'.join(str(v) for v in version)
 __author__ = "Idan Miara"
 __author_email__ = "idan@miara.com"

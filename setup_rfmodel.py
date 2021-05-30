@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 from src.rfmodel import (
-    __pacakge_name__,
+    __package_name__,
     __author__,
     __author_email__,
     __license__,
@@ -12,7 +12,7 @@ from src.rfmodel import (
 
 soruce_dir = 'src'
 packages = find_packages(soruce_dir)  # include all packages under src
-packages = [p for p in packages if str(p).lower().startswith(__pacakge_name__.lower())]
+packages = [p for p in packages if str(p).lower().startswith(__package_name__.lower())]
 package_dir = {'': soruce_dir}
 
 install_requires = ['numpy', 'gdal>=3.0.0', 'gdal-utils>=3.3.0.7', 'pyproj>=3.0.1']
@@ -21,7 +21,7 @@ readme = open('README.rst', encoding="utf-8").read()
 readme_type = 'text/x-rst'
 
 setup(
-    name=__pacakge_name__,
+    name=__package_name__,
     version=__version__,
     author=__author__,
     author_email=__author_email__,

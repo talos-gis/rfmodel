@@ -4,7 +4,7 @@ from pathlib import Path
 from setuptools import setup
 
 from src.tirem import (
-    __pacakge_name__,
+    __package_name__,
     __author__,
     __author_email__,
     __license__,
@@ -14,7 +14,7 @@ from src.tirem import (
 )
 
 soruce_dir = 'src'
-packages = [__pacakge_name__]
+packages = [__package_name__]
 package_dir = {'': soruce_dir}
 
 install_requires = ['tirem-bin']
@@ -23,7 +23,7 @@ readme_type = 'text/x-rst'
 
 if 'bdist_wheel' in sys.argv:
     # set correct python-tag and plat-name
-    path = Path(soruce_dir) / __pacakge_name__
+    path = Path(soruce_dir) / __package_name__
     python_tags = []
     plat_names = []
     for filename in path.glob('*.pyd'):
@@ -38,7 +38,7 @@ if 'bdist_wheel' in sys.argv:
         sys.argv.extend(['--plat-name', '.'.join(plat_names)])
 
 setup(
-    name=__pacakge_name__,
+    name=__package_name__,
     version=__version__,
     author=__author__,
     author_email=__author_email__,

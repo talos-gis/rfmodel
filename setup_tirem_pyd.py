@@ -5,7 +5,7 @@ from Cython.Build import cythonize
 import numpy
 
 from src.tirem import (
-    __pacakge_name__,
+    __package_name__,
     __author__,
     __author_email__,
     __license__,
@@ -15,7 +15,7 @@ from src.tirem import (
 )
 
 package_root = 'src'
-packages = [__pacakge_name__]
+packages = [__package_name__]
 package_dir = {'': package_root}
 src_root = 'src/tirem'
 
@@ -29,7 +29,7 @@ ext_modules = Extension(
 )
 
 setup(
-    name=__pacakge_name__,
+    name=__package_name__,
     version=__version__,
     author=__author__,
     author_email=__author_email__,
