@@ -1,4 +1,4 @@
-version = (0, 0, 5)
+version = (0, 0, 6)
 
 __package_name__ = "RFModel"
 __version__ = '.'.join(str(v) for v in version)

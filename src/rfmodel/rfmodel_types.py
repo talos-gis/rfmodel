@@ -5,6 +5,13 @@ from numpy.testing import assert_almost_equal
 
 
 class RFModelReturn(NamedTuple):
+    """
+    fresnel_clearance: The ratio of the minimum clearance of the ray path to the first Fresnel zone radius
+    total_loss: Total Path loss (Basic transmission loss) [dB]
+    free_space_loss: Free space loss [dB]
+    version: Model version number
+    propagation_mode: Mode indicator
+    """
     fresnel_clearance: float
     total_loss: float
     free_space_loss: float

@@ -1,4 +1,4 @@
-version = (3, 0, 0)
+version = (3, 0, 1)
 
 __package_name__ = "tirem"
 __version__ = '.'.join(str(v) for v in version)
