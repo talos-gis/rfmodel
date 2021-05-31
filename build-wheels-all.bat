@@ -4,8 +4,6 @@
 rmdir /s/q dist
 
 :: creating the package
-call build-rfmodel-wheel.bat x
 call build-tirem-wheel.bat x
 call build-tirem-bin-wheel.bat x
-
-if %1x==x call run_tests.bat
+call build-rfmodel-wheel.bat
