@@ -4,7 +4,7 @@ from tirem.tirem3 import calc_tirem_loss
 
 
 def test_calc_loss_lonlat():
-    filename = 'data/srtm_30k.tif'
+    filename = 'data/srtm_30k_global.tif'
 
     boston_lat = 42. + (15. / 60.)
     boston_lon = -71. - (7. / 60.)

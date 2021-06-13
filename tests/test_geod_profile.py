@@ -7,7 +7,7 @@ from rfmodel.geod.geod_profile import Geod, geod_profile
 
 
 def test_profile(do_print=False):
-    filename = 'data/srtm_30k.tif'
+    filename = 'data/srtm_30k_global.tif'
     boston_lat = 42. + (15. / 60.)
     boston_lon = -71. - (7. / 60.)
     portland_lat = 45. + (31. / 60.)
