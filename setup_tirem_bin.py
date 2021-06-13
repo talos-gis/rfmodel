@@ -41,7 +41,7 @@ try:
         package_dir=package_dir,
         long_description=readme,
         long_description_content_type=readme_type,
-        package_data={"": ["*.dll"]},
+        package_data={"": ["*.dll", "*.key"]},
     )
 
 finally:
