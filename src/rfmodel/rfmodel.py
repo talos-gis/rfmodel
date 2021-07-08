@@ -43,7 +43,7 @@ def calc_path_loss_lonlat(
 
 
 def get_dict_of_items_from_dict_of_sequences(d: Dict[Any, Sequence], index: int) -> Dict[Any, Any]:
-    return {k: (v[index] if isinstance(v, Sequence) else v) for k, v in d.items()}
+    return {k: (v[index % len(v)] if isinstance(v, Sequence) else v) for k, v in d.items()}
 
 
 def calc_path_loss_lonlat_multi(
