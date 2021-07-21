@@ -1,4 +1,4 @@
-from typing import Any, Callable, Sequence, Dict
+from typing import Any, Callable, Sequence, Dict, Tuple
 
 import numpy as np
 
@@ -51,9 +51,10 @@ def calc_path_loss_lonlat_multi(
         filename_or_ds: PathOrDS,
         count: int, main_options: dict,
         profile_options: dict, rfmodel_options: dict,
-        **kwargs) -> np.ndarray:
+        **kwargs) -> Tuple[np.ndarray, np.ndarray]:
 
     a = np.empty((3, count), dtype=np.float32)
+    b = np.empty(count, dtype=np.bool)
     for i in range(count):
         res = calc_path_loss_lonlat(
             calc_loss=calc_loss,
@@ -62,6 +63,7 @@ def calc_path_loss_lonlat_multi(
             profile_options=get_dict_of_items_from_dict_of_sequences(profile_options, i),
             rfmodel_options=get_dict_of_items_from_dict_of_sequences(rfmodel_options, i), **kwargs)
         a[:, i] = res[0:3]
+        b[i] = res[4] == 'LOS'
 
-    return a
+    return a, b
 
