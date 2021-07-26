@@ -54,7 +54,7 @@ def calc_path_loss_lonlat_multi(
         **kwargs) -> Tuple[np.ndarray, np.ndarray]:
 
     a = np.empty((3, count), dtype=np.float32)
-    b = np.empty(count, dtype=np.bool)
+    b = np.empty(count, dtype=bool)
     for i in range(count):
         res = calc_path_loss_lonlat(
             calc_loss=calc_loss,
