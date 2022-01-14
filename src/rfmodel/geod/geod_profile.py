@@ -1,10 +1,10 @@
 from typing import Tuple, Optional, Union
 
-from osgeo import osr
 import numpy as np
 import pyproj
-
+from osgeo import osr
 from osgeo_utils.auxiliary.osr_util import get_srs
+
 from rfmodel.util import version_tuple
 
 pyproj_version = version_tuple(pyproj.__version__)
